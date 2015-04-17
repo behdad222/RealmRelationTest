@@ -1,5 +1,6 @@
 package behdad222.realmrelationtest.Model;
 
+import io.realm.RealmList;
 import io.realm.RealmObject;
 import io.realm.annotations.RealmClass;
 
@@ -15,6 +16,7 @@ public class CategoryModel extends RealmObject {
     private String description;
     private String tabId;
     private String tabName;
+    private RealmList<ProductModel> products;
 
     public CategoryModel(
             String serverId,
@@ -78,5 +80,13 @@ public class CategoryModel extends RealmObject {
 
     public void setTabId(String tabId) {
         this.tabId = tabId;
+    }
+
+    public RealmList<ProductModel> getProducts() {
+        return products;
+    }
+
+    public void setProducts(RealmList<ProductModel> products) {
+        this.products = products;
     }
 }

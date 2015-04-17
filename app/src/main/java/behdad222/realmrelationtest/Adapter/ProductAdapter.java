@@ -10,19 +10,26 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import behdad222.realmrelationtest.Model.CategoryModel;
 import behdad222.realmrelationtest.Model.ProductModel;
 import behdad222.realmrelationtest.R;
 import behdad222.realmrelationtest.View.Activity.AddProductActivity;
+import behdad222.realmrelationtest.View.Activity.ProductActivity;
+import io.realm.Realm;
+import io.realm.RealmList;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> {
     private ArrayList<ProductModel> products;
     private Context context;
+    private boolean select;
+    private CategoryModel category;
 
-    public ProductAdapter(ArrayList<ProductModel> products, Context context) {
+    public ProductAdapter(ArrayList<ProductModel> products, Context context, boolean select, CategoryModel category) {
         this.products = products;
         this.context = context;
+        this.select = select;
+        this.category = category;
     }
-
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView id;
@@ -37,10 +44,24 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(context, AddProductActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            intent.putExtra("id", products.get(getPosition()).getServerID());
-            context.startActivity(intent);
+            if (!select) {
+                Intent intent = new Intent(context, AddProductActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                intent.putExtra("id", products.get(getPosition()).getServerID());
+                context.startActivity(intent);
+            } else {
+                RealmList<ProductModel> product = new RealmList<>();
+                product.add(products.get(getPosition()));
+                category.setProducts(product);
+
+                Realm realm = Realm.getInstance(context);
+
+                realm.beginTransaction();
+                realm.copyToRealmOrUpdate(category);
+                realm.commitTransaction();
+
+                ((ProductActivity) context).finish();
+            }
         }
     }
 

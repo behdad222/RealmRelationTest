@@ -3,10 +3,15 @@ package behdad222.realmrelationtest.View.Activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.ArrayList;
+
+import behdad222.realmrelationtest.Model.ProductModel;
 import behdad222.realmrelationtest.Model.UserModel;
 import behdad222.realmrelationtest.R;
 import io.realm.Realm;
@@ -18,6 +23,10 @@ public class AddUserActivity extends Activity implements View.OnClickListener {
     private EditText id;
     private EditText name;
     private String userID;
+    private RecyclerView recycleView;
+    private RecyclerView.LayoutManager layoutManager;
+    private RecyclerView.Adapter adapter;
+    private ArrayList<ProductModel> products;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +41,11 @@ public class AddUserActivity extends Activity implements View.OnClickListener {
         save = (Button) findViewById(R.id.save);
         id = (EditText) findViewById(R.id.id);
         name = (EditText) findViewById(R.id.name);
+        recycleView = (RecyclerView) findViewById(R.id.recycler_view);
+        recycleView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+        recycleView.setLayoutManager(layoutManager);
+
 
         save.setOnClickListener(this);
 

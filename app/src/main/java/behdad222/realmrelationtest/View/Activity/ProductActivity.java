@@ -11,6 +11,7 @@ import android.widget.Button;
 import java.util.ArrayList;
 
 import behdad222.realmrelationtest.Adapter.ProductAdapter;
+import behdad222.realmrelationtest.Model.CategoryModel;
 import behdad222.realmrelationtest.Model.ProductModel;
 import behdad222.realmrelationtest.R;
 import io.realm.Realm;
@@ -26,25 +27,36 @@ public class ProductActivity extends Activity implements View.OnClickListener {
 
     private Button add;
 
+    private boolean select;
+    private CategoryModel category;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_more);
 
+        Intent intent = getIntent();
+        select = intent.getBooleanExtra("select", false);
+
         realm = Realm.getInstance(this);
         products = new ArrayList<>();
 
         add = (Button) findViewById(R.id.add);
+        category = AddCategoryActivity.category;
 
         recycleView = (RecyclerView) findViewById(R.id.recycler_view);
         recycleView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recycleView.setLayoutManager(layoutManager);
 
-        adapter = new ProductAdapter(products, this);
+        adapter = new ProductAdapter(products, this, select, category);
         recycleView.setAdapter(adapter);
 
         add.setOnClickListener(this);
+
+        if (select) {
+            add.setVisibility(View.GONE);
+        }
     }
 
     private void showData() {

@@ -37,7 +37,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
 
             case R.id.category:
-                i = new Intent (this, UserActivity.class);
+                i = new Intent (this, CategotyActivity.class);
                 startActivity(i);
                 break;
 

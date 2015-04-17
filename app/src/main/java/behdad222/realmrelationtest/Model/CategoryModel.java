@@ -2,11 +2,13 @@ package behdad222.realmrelationtest.Model;
 
 import io.realm.RealmList;
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 import io.realm.annotations.RealmClass;
 
 @RealmClass
 public class CategoryModel extends RealmObject {
-    private String serverId;
+    @PrimaryKey
+    private String serverID;
     private String name;
     private String imageURL;
     private String description;
@@ -22,12 +24,12 @@ public class CategoryModel extends RealmObject {
         this.tabName = tabName;
     }
 
-    public String getServerId() {
-        return serverId;
+    public String getServerID() {
+        return serverID;
     }
 
-    public void setServerId(String serverId) {
-        this.serverId = serverId;
+    public void setServerID(String serverID) {
+        this.serverID = serverID;
     }
 
     public String getName() {

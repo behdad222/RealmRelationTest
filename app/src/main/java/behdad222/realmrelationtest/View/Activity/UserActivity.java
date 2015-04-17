@@ -1,9 +1,11 @@
-package behdad222.realmrelationtest;
+package behdad222.realmrelationtest.View.Activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-public class MainActivity extends Activity {
+import behdad222.realmrelationtest.R;
+
+public class UserActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -9,18 +9,25 @@ import io.realm.annotations.RealmClass;
 
 @RealmClass
 public class CategoryModel extends RealmObject {
-    private String categoryServerId;
-    private String categoryName;
-    private String categoryImageURL;
-    private String categoryDescription;
+    private String serverId;
+    private String name;
+    private String imageURL;
+    private String description;
     private String tabId;
     private String tabName;
 
-    public CategoryModel(String categoryServerId, String categoryName, String categoryImageURL, String categoryDescription, String tabId, String tabName) {
-        this.categoryServerId = categoryServerId;
-        this.categoryName = categoryName;
-        this.categoryImageURL = categoryImageURL;
-        this.categoryDescription = categoryDescription;
+    public CategoryModel(
+            String serverId,
+            String name,
+            String imageURL,
+            String description,
+            String tabId,
+            String tabName) {
+
+        this.serverId = serverId;
+        this.name = name;
+        this.imageURL = imageURL;
+        this.description = description;
         this.tabId = tabId;
         this.tabName = tabName;
     }
@@ -33,43 +40,43 @@ public class CategoryModel extends RealmObject {
         this.tabName = tabName;
     }
 
+    public String getServerId() {
+        return serverId;
+    }
+
+    public void setServerId(String serverId) {
+        this.serverId = serverId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public String getTabId() {
         return tabId;
     }
 
     public void setTabId(String tabId) {
         this.tabId = tabId;
-    }
-
-    public String getCategoryDescription() {
-        return categoryDescription;
-    }
-
-    public void setCategoryDescription(String categoryDescription) {
-        this.categoryDescription = categoryDescription;
-    }
-
-    public String getCategoryImageURL() {
-        return categoryImageURL;
-    }
-
-    public void setCategoryImageURL(String categoryImageURL) {
-        this.categoryImageURL = categoryImageURL;
-    }
-
-    public String getCategoryName() {
-        return categoryName;
-    }
-
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
-    }
-
-    public String getCategoryServerId() {
-        return categoryServerId;
-    }
-
-    public void setCategoryServerId(String categoryServerId) {
-        this.categoryServerId = categoryServerId;
     }
 }

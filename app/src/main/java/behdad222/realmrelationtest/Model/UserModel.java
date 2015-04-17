@@ -7,133 +7,131 @@ import io.realm.annotations.RealmClass;
  * Created by behdad on 4/17/15.
  */
 
-
 @RealmClass
 public class UserModel extends RealmObject {
-    private String userServerID;
-    private String userUserName;
-    private String userPassword;
-    private String userFirstName;
-    private String userLastName;
-    private String userEmail;
-    private String userAvatarUrl;
-    private String userCredit;
-    private String userLastLogin;
-    private boolean userActive;
-    private String userToken;
+    private String serverID;
+    private String name;
+    private String password;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String avatarUrl;
+    private String credit;
+    private String lastLogin;
+    private boolean active;
+    private String token;
 
     public UserModel(
-            String userServerID,
-            String userToken,
-            boolean userActive,
-            String userLastLogin,
-            String userCredit,
-            String userAvatarUrl,
-            String userEmail,
-            String userLastName,
-            String userFirstName,
-            String userPassword,
-            String userUserName) {
+            String serverID,
+            String name,
+            String password,
+            String firstName,
+            String lastName,
+            String email,
+            String avatarUrl,
+            String credit,
+            String lastLogin,
+            boolean active,
+            String token) {
 
-        this.userServerID = userServerID;
-        this.userToken = userToken;
-        this.userActive = userActive;
-        this.userLastLogin = userLastLogin;
-        this.userCredit = userCredit;
-        this.userAvatarUrl = userAvatarUrl;
-        this.userEmail = userEmail;
-        this.userLastName = userLastName;
-        this.userFirstName = userFirstName;
-        this.userPassword = userPassword;
-        this.userUserName = userUserName;
+        this.serverID = serverID;
+        this.name = name;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.avatarUrl = avatarUrl;
+        this.credit = credit;
+        this.lastLogin = lastLogin;
+        this.active = active;
+        this.token = token;
     }
 
-    public String getUserToken() {
-        return userToken;
+    public String getServerID() {
+        return serverID;
     }
 
-    public void setUserToken(String userToken) {
-        this.userToken = userToken;
+    public void setServerID(String serverID) {
+        this.serverID = serverID;
     }
 
-    public String getUserServerID() {
-        return userServerID;
+    public String getName() {
+        return name;
     }
 
-    public void setUserServerID(String userServerID) {
-        this.userServerID = userServerID;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getUserUserName() {
-        return userUserName;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUserUserName(String userUserName) {
-        this.userUserName = userUserName;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getUserPassword() {
-        return userPassword;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getUserFirstName() {
-        return userFirstName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setUserFirstName(String userFirstName) {
-        this.userFirstName = userFirstName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getUserLastName() {
-        return userLastName;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUserLastName(String userLastName) {
-        this.userLastName = userLastName;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getUserEmail() {
-        return userEmail;
+    public String getAvatarUrl() {
+        return avatarUrl;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 
-    public String getUserAvatarUrl() {
-        return userAvatarUrl;
+    public String getCredit() {
+        return credit;
     }
 
-    public void setUserAvatarUrl(String userAvatarUrl) {
-        this.userAvatarUrl = userAvatarUrl;
+    public void setCredit(String credit) {
+        this.credit = credit;
     }
 
-    public String getUserCredit() {
-        return userCredit;
+    public String getLastLogin() {
+        return lastLogin;
     }
 
-    public void setUserCredit(String userCredit) {
-        this.userCredit = userCredit;
+    public void setLastLogin(String lastLogin) {
+        this.lastLogin = lastLogin;
     }
 
-    public String getUserLastLogin() {
-        return userLastLogin;
+    public boolean isActive() {
+        return active;
     }
 
-    public void setUserLastLogin(String userLastLogin) {
-        this.userLastLogin = userLastLogin;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
-    public boolean isUserActive() {
-        return userActive;
+    public String getToken() {
+        return token;
     }
 
-    public void setUserActive(boolean userActive) {
-        this.userActive = userActive;
+    public void setToken(String token) {
+        this.token = token;
     }
-
 }

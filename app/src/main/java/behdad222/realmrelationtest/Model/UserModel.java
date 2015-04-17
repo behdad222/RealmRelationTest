@@ -3,7 +3,7 @@ package behdad222.realmrelationtest.Model;
 import io.realm.RealmObject;
 import io.realm.annotations.RealmClass;
 
-/**
+/*
  * Created by behdad on 4/17/15.
  */
 
@@ -22,21 +22,30 @@ public class UserModel extends RealmObject {
     private boolean userActive;
     private String userToken;
 
-    public UserModel(String userServerID, String userUserName, String userPassword,
-                     String userFirstName, String userLastName, String userEmail,
-                     String userAvatarUrl, String userCredit, String userLastLogin,
-                     boolean userActive, String userToken) {
+    public UserModel(
+            String userServerID,
+            String userToken,
+            boolean userActive,
+            String userLastLogin,
+            String userCredit,
+            String userAvatarUrl,
+            String userEmail,
+            String userLastName,
+            String userFirstName,
+            String userPassword,
+            String userUserName) {
+
         this.userServerID = userServerID;
-        this.userUserName = userUserName;
-        this.userPassword = userPassword;
-        this.userFirstName = userFirstName;
-        this.userLastName = userLastName;
-        this.userEmail = userEmail;
-        this.userAvatarUrl = userAvatarUrl;
-        this.userCredit = userCredit;
-        this.userLastLogin = userLastLogin;
-        this.userActive = userActive;
         this.userToken = userToken;
+        this.userActive = userActive;
+        this.userLastLogin = userLastLogin;
+        this.userCredit = userCredit;
+        this.userAvatarUrl = userAvatarUrl;
+        this.userEmail = userEmail;
+        this.userLastName = userLastName;
+        this.userFirstName = userFirstName;
+        this.userPassword = userPassword;
+        this.userUserName = userUserName;
     }
 
     public String getUserToken() {

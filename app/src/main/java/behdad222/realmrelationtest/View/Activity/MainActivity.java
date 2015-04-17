@@ -42,7 +42,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
 
             case R.id.product:
-                i = new Intent (this, UserActivity.class);
+                i = new Intent (this, ProductActivity.class);
                 startActivity(i);
                 break;
         }

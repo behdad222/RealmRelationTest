@@ -9,7 +9,7 @@ import io.realm.annotations.RealmClass;
 
 @RealmClass
 public class ProductModel extends RealmObject {
-    private String serverId;
+    private String serverID;
     private String name;
     private String imageURL;
     private int totalPages;
@@ -24,12 +24,12 @@ public class ProductModel extends RealmObject {
     private String kind;
     private String creationDate;
 
-    public String getServerId() {
-        return serverId;
+    public String getServerID() {
+        return serverID;
     }
 
-    public void setServerId(String serverId) {
-        this.serverId = serverId;
+    public void setServerID(String serverID) {
+        this.serverID = serverID;
     }
 
     public String getName() {

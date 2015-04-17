@@ -22,10 +22,12 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView id;
+        TextView name;
 
         public ViewHolder(View v) {
             super(v);
             id = (TextView) itemView.findViewById(R.id.id);
+            name = (TextView) itemView.findViewById(R.id.name);
         }
     }
 
@@ -40,8 +42,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        UserModel object = users.get(position);
-        holder.id.setText(object.getServerID());
+        UserModel user = users.get(position);
+        holder.id.setText(user.getServerID());
+        holder.name.setText(user.getName());
     }
 
     @Override

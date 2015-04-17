@@ -1,11 +1,8 @@
 package behdad222.realmrelationtest.Model;
 
+import io.realm.RealmList;
 import io.realm.RealmObject;
 import io.realm.annotations.RealmClass;
-
-/*
- * Created by behdad on 4/17/15.
- */
 
 @RealmClass
 public class UserModel extends RealmObject {
@@ -20,6 +17,7 @@ public class UserModel extends RealmObject {
     private String lastLogin;
     private boolean active;
     private String token;
+    private RealmList<User2ProductModel> products;
 
     public UserModel(
             String serverID,
@@ -133,5 +131,13 @@ public class UserModel extends RealmObject {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public RealmList<User2ProductModel> getProducts() {
+        return products;
+    }
+
+    public void setProducts(RealmList<User2ProductModel> products) {
+        this.products = products;
     }
 }

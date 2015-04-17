@@ -4,10 +4,6 @@ import io.realm.RealmList;
 import io.realm.RealmObject;
 import io.realm.annotations.RealmClass;
 
-/*
- * Created by behdad on 4/17/15.
- */
-
 @RealmClass
 public class CategoryModel extends RealmObject {
     private String serverId;

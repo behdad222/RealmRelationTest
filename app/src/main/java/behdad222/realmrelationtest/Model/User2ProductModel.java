@@ -1,10 +1,10 @@
 package behdad222.realmrelationtest.Model;
 
-/*
- * Created by behdad on 4/17/15.
- */
+import io.realm.RealmObject;
+import io.realm.annotations.RealmClass;
 
-public class User2ProductModel {
+@RealmClass
+public class User2ProductModel extends RealmObject {
     private String MD5;
     private String encryptedMD5;
     private int status;

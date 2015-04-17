@@ -45,6 +45,11 @@ public class UserActivity extends Activity implements View.OnClickListener {
         adapter = new UserAdapter(users, this);
         recycleView.setAdapter(adapter);
 
+        add.setOnClickListener(this);
+    }
+
+    private void showData() {
+        users.clear();
         RealmResults<UserModel> result = realm
                 .where(UserModel.class)
                 .findAll();
@@ -54,9 +59,6 @@ public class UserActivity extends Activity implements View.OnClickListener {
         }
 
         adapter.notifyDataSetChanged();
-
-        add.setOnClickListener(this);
-
     }
 
     @Override
@@ -69,5 +71,11 @@ public class UserActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         Intent i = new Intent(this, AddUserActivity.class);
         startActivity(i);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        showData();
     }
 }

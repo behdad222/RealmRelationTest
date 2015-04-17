@@ -42,7 +42,7 @@ public class UserActivity extends Activity implements View.OnClickListener {
         layoutManager = new LinearLayoutManager(this);
         recycleView.setLayoutManager(layoutManager);
 
-        adapter = new UserAdapter(users);
+        adapter = new UserAdapter(users, this);
         recycleView.setAdapter(adapter);
 
         RealmResults<UserModel> result = realm

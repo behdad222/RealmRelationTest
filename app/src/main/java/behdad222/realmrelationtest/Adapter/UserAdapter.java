@@ -1,5 +1,7 @@
 package behdad222.realmrelationtest.Adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,17 +12,19 @@ import java.util.ArrayList;
 
 import behdad222.realmrelationtest.Model.UserModel;
 import behdad222.realmrelationtest.R;
+import behdad222.realmrelationtest.View.Activity.AddUserActivity;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     private ArrayList<UserModel> users;
+    private Context context;
 
-
-    public UserAdapter(ArrayList<UserModel> users) {
+    public UserAdapter(ArrayList<UserModel> users, Context context) {
         this.users = users;
+        this.context = context;
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView id;
         TextView name;
 
@@ -28,6 +32,15 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
             super(v);
             id = (TextView) itemView.findViewById(R.id.id);
             name = (TextView) itemView.findViewById(R.id.name);
+            v.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(context, AddUserActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            intent.putExtra("id", users.get(getPosition()).getServerID());
+            context.startActivity(intent);
         }
     }
 

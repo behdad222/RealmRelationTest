@@ -21,6 +21,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
         user = (Button) findViewById(R.id.user);
         category = (Button) findViewById(R.id.category);
         product = (Button) findViewById(R.id.product);
+
+        user.setOnClickListener(this);
+        category.setOnClickListener(this);
+        product.setOnClickListener(this);
     }
 
     @Override

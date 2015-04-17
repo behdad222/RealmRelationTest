@@ -1,6 +1,7 @@
 package behdad222.realmrelationtest.Model;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 import io.realm.annotations.RealmClass;
 
 /*
@@ -9,6 +10,7 @@ import io.realm.annotations.RealmClass;
 
 @RealmClass
 public class ProductModel extends RealmObject {
+    @PrimaryKey
     private String serverID;
     private String name;
     private String imageURL;

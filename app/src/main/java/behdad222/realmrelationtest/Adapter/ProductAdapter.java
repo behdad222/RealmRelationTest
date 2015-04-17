@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 import behdad222.realmrelationtest.Model.ProductModel;
 import behdad222.realmrelationtest.R;
-import behdad222.realmrelationtest.View.Activity.AddUserActivity;
+import behdad222.realmrelationtest.View.Activity.AddProductActivity;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> {
     private ArrayList<ProductModel> products;
@@ -37,7 +37,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(context, AddUserActivity.class);
+            Intent intent = new Intent(context, AddProductActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             intent.putExtra("id", products.get(getPosition()).getServerID());
             context.startActivity(intent);

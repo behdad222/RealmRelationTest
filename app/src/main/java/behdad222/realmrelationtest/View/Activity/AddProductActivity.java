@@ -7,17 +7,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import behdad222.realmrelationtest.Model.UserModel;
+import behdad222.realmrelationtest.Model.ProductModel;
 import behdad222.realmrelationtest.R;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
-public class AddUserActivity extends Activity implements View.OnClickListener {
+public class AddProductActivity extends Activity implements View.OnClickListener {
     private Realm realm;
     private Button save;
     private EditText id;
     private EditText name;
-    private String userID;
+    private String productID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class AddUserActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_add);
 
         Intent intent = getIntent();
-        userID = intent.getStringExtra("id");
+        productID = intent.getStringExtra("id");
 
         realm = Realm.getInstance(this);
 
@@ -35,10 +35,10 @@ public class AddUserActivity extends Activity implements View.OnClickListener {
 
         save.setOnClickListener(this);
 
-        if (userID != null) {
-            RealmResults<UserModel> result = realm
-                    .where(UserModel.class)
-                    .equalTo("serverID", userID).findAll();
+        if (productID != null) {
+            RealmResults<ProductModel> result = realm
+                    .where(ProductModel.class)
+                    .equalTo("serverID", productID).findAll();
 
             id.setText(result.get(0).getServerID());
             name.setText(result.get(0).getName());
@@ -49,12 +49,12 @@ public class AddUserActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
-        UserModel user = new UserModel();
-        user.setServerID(id.getText().toString());
-        user.setName(name.getText().toString());
+        ProductModel product = new ProductModel();
+        product.setServerID(id.getText().toString());
+        product.setName(name.getText().toString());
 
         realm.beginTransaction();
-        realm.copyToRealmOrUpdate(user);
+        realm.copyToRealmOrUpdate(product);
         realm.commitTransaction();
 
         finish();

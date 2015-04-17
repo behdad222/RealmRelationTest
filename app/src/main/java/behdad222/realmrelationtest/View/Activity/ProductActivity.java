@@ -11,9 +11,7 @@ import android.widget.Button;
 import java.util.ArrayList;
 
 import behdad222.realmrelationtest.Adapter.ProductAdapter;
-import behdad222.realmrelationtest.Adapter.UserAdapter;
 import behdad222.realmrelationtest.Model.ProductModel;
-import behdad222.realmrelationtest.Model.UserModel;
 import behdad222.realmrelationtest.R;
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -70,7 +68,7 @@ public class ProductActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Intent i = new Intent(this, AddUserActivity.class);
+        Intent i = new Intent(this, AddProductActivity.class);
         startActivity(i);
     }
 

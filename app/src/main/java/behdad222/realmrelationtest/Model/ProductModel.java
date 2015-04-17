@@ -1,7 +1,6 @@
 package behdad222.realmrelationtest.Model;
 
 import io.realm.RealmObject;
-import io.realm.annotations.PrimaryKey;
 import io.realm.annotations.RealmClass;
 
 /*

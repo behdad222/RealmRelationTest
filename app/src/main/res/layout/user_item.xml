@@ -22,4 +22,15 @@
         android:text="name"
         android:id="@+id/name"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="--"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="md5"
+        android:id="@+id/md5"/>
+
 </LinearLayout>

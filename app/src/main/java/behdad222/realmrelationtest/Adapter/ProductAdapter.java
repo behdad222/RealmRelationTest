@@ -31,6 +31,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         this.category = category;
     }
 
+
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView id;
         TextView name;
@@ -50,6 +51,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                 intent.putExtra("id", products.get(getPosition()).getServerID());
                 context.startActivity(intent);
             } else {
+
                 RealmList<ProductModel> product = new RealmList<>();
                 product.add(products.get(getPosition()));
                 category.setProducts(product);

@@ -8,6 +8,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
+import behdad222.realmrelationtest.Adapter.UserAdapter;
 import behdad222.realmrelationtest.Model.UserModel;
 import behdad222.realmrelationtest.R;
 import io.realm.Realm;
@@ -35,7 +36,7 @@ public class UserActivity extends Activity {
         layoutManager = new LinearLayoutManager(this);
         recycleView.setLayoutManager(layoutManager);
 
-        adapter = new ChatAdapter(users);
+        adapter = new UserAdapter(users);
         recycleView.setAdapter(adapter);
 
 

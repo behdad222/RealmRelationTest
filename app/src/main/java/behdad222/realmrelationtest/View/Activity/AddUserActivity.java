@@ -33,8 +33,6 @@ public class AddUserActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
-        realm.beginTransaction();
-
         UserModel user = new UserModel();
         user.setServerID(id.getText().toString());
         user.setName(name.getText().toString());

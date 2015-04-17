@@ -7,8 +7,7 @@ import io.realm.annotations.RealmClass;
 
 @RealmClass
 public class UserModel extends RealmObject {
-    @PrimaryKey
-    private String serverID;
+    @PrimaryKey private String serverID;
     private String name;
     private String password;
     private String firstName;

@@ -14,22 +14,6 @@ public class CategoryModel extends RealmObject {
     private String tabName;
     private RealmList<ProductModel> products;
 
-    public CategoryModel(
-            String serverId,
-            String name,
-            String imageURL,
-            String description,
-            String tabId,
-            String tabName) {
-
-        this.serverId = serverId;
-        this.name = name;
-        this.imageURL = imageURL;
-        this.description = description;
-        this.tabId = tabId;
-        this.tabName = tabName;
-    }
-
     public String getTabName() {
         return tabName;
     }

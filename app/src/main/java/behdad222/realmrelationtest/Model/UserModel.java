@@ -19,32 +19,6 @@ public class UserModel extends RealmObject {
     private String token;
     private RealmList<User2ProductModel> products;
 
-    public UserModel(
-            String serverID,
-            String name,
-            String password,
-            String firstName,
-            String lastName,
-            String email,
-            String avatarUrl,
-            String credit,
-            String lastLogin,
-            boolean active,
-            String token) {
-
-        this.serverID = serverID;
-        this.name = name;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.avatarUrl = avatarUrl;
-        this.credit = credit;
-        this.lastLogin = lastLogin;
-        this.active = active;
-        this.token = token;
-    }
-
     public String getServerID() {
         return serverID;
     }

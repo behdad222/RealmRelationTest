@@ -24,38 +24,6 @@ public class ProductModel extends RealmObject {
     private String kind;
     private String creationDate;
 
-    public ProductModel(
-            String serverId,
-            String name,
-            String imageURL,
-            int totalPages,
-            String producer,
-            String publisher,
-            String description,
-            String power,
-            String ISBN,
-            String price,
-            String size,
-            String summary,
-            String kind,
-            String creationDate) {
-
-        this.serverId = serverId;
-        this.name = name;
-        this.imageURL = imageURL;
-        this.totalPages = totalPages;
-        this.producer = producer;
-        this.publisher = publisher;
-        this.description = description;
-        this.power = power;
-        this.ISBN = ISBN;
-        this.price = price;
-        this.size = size;
-        this.summary = summary;
-        this.kind = kind;
-        this.creationDate = creationDate;
-    }
-
     public String getServerId() {
         return serverId;
     }

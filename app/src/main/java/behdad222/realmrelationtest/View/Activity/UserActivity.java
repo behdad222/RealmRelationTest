@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
@@ -24,6 +25,8 @@ public class UserActivity extends Activity implements View.OnClickListener {
     private Realm realm;
     private ArrayList<UserModel> users;
 
+    private Button add;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,8 @@ public class UserActivity extends Activity implements View.OnClickListener {
 
         realm = Realm.getInstance(this);
         users = new ArrayList<>();
+
+        add = (Button) findViewById(R.id.add);
 
         recycleView = (RecyclerView) findViewById(R.id.recycler_view);
         recycleView.setHasFixedSize(true);
@@ -49,6 +54,9 @@ public class UserActivity extends Activity implements View.OnClickListener {
         }
 
         adapter.notifyDataSetChanged();
+
+        add.setOnClickListener(this);
+
     }
 
     @Override
@@ -59,7 +67,7 @@ public class UserActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Intent i = new Intent(this, UserActivity.class);
+        Intent i = new Intent(this, AddUserActivity.class);
         startActivity(i);
     }
 }

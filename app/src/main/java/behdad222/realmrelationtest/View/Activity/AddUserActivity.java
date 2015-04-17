@@ -13,14 +13,14 @@ public class AddUserActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_add_user);
 
         realm = Realm.getInstance(this);
     }
 
     @Override
     public void onClick(View v) {
-        
+
     }
 
     @Override

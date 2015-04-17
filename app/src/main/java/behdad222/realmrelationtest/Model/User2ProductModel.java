@@ -13,24 +13,6 @@ public class User2ProductModel extends RealmObject {
     private String lastRead;
     private ProductModel product;
 
-    public User2ProductModel(
-            String MD5,
-            String encryptedMD5,
-            int status,
-            int localStatus,
-            int currentPage,
-            String lastRead,
-            ProductModel product) {
-
-        this.MD5 = MD5;
-        this.encryptedMD5 = encryptedMD5;
-        this.status = status;
-        this.localStatus = localStatus;
-        this.currentPage = currentPage;
-        this.lastRead = lastRead;
-        this.product = product;
-    }
-
     public String getMD5() {
         return MD5;
     }

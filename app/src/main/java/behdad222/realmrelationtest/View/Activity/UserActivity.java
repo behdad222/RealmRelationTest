@@ -1,10 +1,12 @@
 package behdad222.realmrelationtest.View.Activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 
 import java.util.ArrayList;
 
@@ -14,7 +16,7 @@ import behdad222.realmrelationtest.R;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
-public class UserActivity extends Activity {
+public class UserActivity extends Activity implements View.OnClickListener {
     private RecyclerView recycleView;
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView.Adapter adapter;
@@ -30,7 +32,6 @@ public class UserActivity extends Activity {
         realm = Realm.getInstance(this);
         users = new ArrayList<>();
 
-
         recycleView = (RecyclerView) findViewById(R.id.recycler_view);
         recycleView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
@@ -38,7 +39,6 @@ public class UserActivity extends Activity {
 
         adapter = new UserAdapter(users);
         recycleView.setAdapter(adapter);
-
 
         RealmResults<UserModel> result = realm
                 .where(UserModel.class)
@@ -49,13 +49,17 @@ public class UserActivity extends Activity {
         }
 
         adapter.notifyDataSetChanged();
-
     }
-
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         realm.close();
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent i = new Intent(this, UserActivity.class);
+        startActivity(i);
     }
 }

@@ -20,6 +20,7 @@
         <activity android:name=".View.Activity.CategotyActivity"/>
         <activity android:name=".View.Activity.UserActivity"/>
         <activity android:name=".View.Activity.ProductActivity"/>
+        <activity android:name=".View.Activity.AddUserActivity"/>
 
     </application>
 
